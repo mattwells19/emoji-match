@@ -96,15 +96,15 @@ const App: Component = () => {
     setCardTwo(card);
 
     if (cardOneVal.value === card.value) {
-      setBoard((prevBoard) => {
-        return prevBoard.map((boardCard) => ({
+      setBoard(
+        board().map((boardCard) => ({
           ...boardCard,
           flipped:
             boardCard.flipped ||
             boardCard.key === cardOneVal.key ||
             boardCard.key === card.key,
-        }));
-      });
+        }))
+      );
       setCardOne(null);
       setCardTwo(null);
     } else {
@@ -124,9 +124,7 @@ const App: Component = () => {
             <button
               class="game_control"
               onClick={() =>
-                setBoard((prevBoard) =>
-                  prevBoard.map((card) => ({ ...card, flipped: true }))
-                )
+                setBoard(board().map((card) => ({ ...card, flipped: true })))
               }
             >
               Reveal
