@@ -1,5 +1,19 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0px;
+}
+
+body {
+  --main-bg: #fafafa;
+  --main-text-color: black;
+  --card-back: #3a3335;
+  --card-outline: #919191;
+  --card-hover: #d81e5b;
+  --card-flipped: #fdf0d5;
+  --card-matched: #c6d8d3;
+
+  background-color: var(--main-bg);
+  color: var(--main-text-color);
 }
 
 main {
@@ -27,6 +41,7 @@ button.game_control {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(6, 1fr);
   aspect-ratio: 1 / 1;
+  border: 1px solid var(--card-outline);
 }
 
 @keyframes dance_party {
@@ -48,24 +63,24 @@ button.game_control {
 .card {
   font-size: 2rem;
   color: transparent;
-  background-color: #3a3335;
+  background-color: var(--card-back);
   position: relative;
   aspect-ratio: 1 / 1;
-  border: 2px solid rgb(145, 145, 145);
+  border: 2px solid var(--card-outline);
 }
 
 .card:hover {
-  background-color: #d81e5b;
+  background-color: var(--card-hover);
 }
 
 .card.flipped {
   color: unset;
-  background-color: #fdf0d5;
+  background-color: var(--card-flipped);
 }
 
 .card.matched {
   color: unset;
-  background-color: #c6d8d3;
+  background-color: var(--card-matched);
 }
 
 .card_content {
